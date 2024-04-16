@@ -20,9 +20,9 @@ class BattleshipGame
         Console.WriteLine("|   Estas son las reglas:                                                                   |");
         Console.WriteLine("|   Regla 1. tienes 8 intentos para atacar 4 barcos.                                        |");
         Console.WriteLine("|   Regla 2. si aciertas en derrotar un barco, el intento no es tomado en cuenta.           |");
-        Console.WriteLine("|   Regla 2. si fallas en derrotar un barco, el intento si es tomado en cuenta.             |");
-        Console.WriteLine("|   Regla 3. Si atacas en donde ya habías eliminado el barco el intento no cuenta.          |");
-        Console.WriteLine("|   Regla 4. Si atacas en donde ya habías fallado. el intento si cuenta.                    |");
+        Console.WriteLine("|   Regla 3. si fallas en derrotar un barco, el intento si es tomado en cuenta.             |");
+        Console.WriteLine("|   Regla 4. Si atacas en donde ya habías eliminado el barco el intento no cuenta.          |");
+        Console.WriteLine("|   Regla 5. Si atacas en donde ya habías fallado. el intento si cuenta.                    |");
         Console.WriteLine("|                         * * * ¡BUENA SUERTE!* * *                                         |");
         Console.WriteLine("|...........................................................................................|");
         do
