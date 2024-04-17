@@ -28,7 +28,7 @@ class BattleshipGame
         do
         {
             ComenzarJuego();
-            VerTablero(false); // Muestra el tablero ocultando donde la posicion de los barcos
+            VerTablero(false); // Muestra el tablero ocultando la posicion de los barcos
             ModoJuego();
             do
             {
@@ -50,20 +50,20 @@ class BattleshipGame
             filas = Convert.ToInt32(Console.ReadLine()!);
             Console.WriteLine("Ingrese un número de columna para el tablero:");
             columnas = Convert.ToInt32(Console.ReadLine()!);
-
+            //verificar que las filas y columnas esten dentro del limite admitido
             if (filas < 3 || columnas < 3 || filas > 10 || columnas > 10)
             {
                 Console.WriteLine("\nNo ingresaste el tamaño admitido, intenta de nuevo\n");
             }
         } while (filas < 3 || columnas < 3 || filas > 10 || columnas > 10);
-
+        //cambia el valor de las filas y columnas al que ingreso el usuario
         tablero = new char[filas, columnas];
 
         for (int i = 0; i < filas; i++)
         {
             for (int j = 0; j < columnas; j++)
             {
-                tablero[i, j] = '-'; // '-' esto es agua
+                tablero[i, j] = '-'; // '-' esto representa el agua
             }
         }
         AreaBarco();
@@ -71,7 +71,7 @@ class BattleshipGame
 
     static void AreaBarco()
     {
-        Random aleatorio = new Random();
+        Random aleatorio = new Random();//coloca los barcos en posiciones aleatorias
         for (int i = 0; i < contadorBarco; i++)
         {
             int filas, columnas;
@@ -85,7 +85,7 @@ class BattleshipGame
         }
     }
 
-    static void VerTablero(bool mostrarBarcos)
+    static void VerTablero(bool mostrarBarcos)//muestra el tablero en la consola
     {
 
         Console.Write("       ");
@@ -102,8 +102,8 @@ class BattleshipGame
             for (int j = 0; j < tablero.GetLength(1); j++)
             {
                 char verCaracter = tablero[i, j];
-                if (!mostrarBarcos && verCaracter == 'B')
-                {  // Oculta los barcos si revealShips es falso
+                if (!mostrarBarcos && verCaracter == 'B') //Oculta los barcos si mostrarBarcos es falso
+                {  
 
                     verCaracter = '-';
                 }
@@ -124,7 +124,7 @@ class BattleshipGame
             int filas = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Ingresa un numero de columna:");
             int columnas = Convert.ToInt32(Console.ReadLine());
-
+            // verifica si el intento es un acierto, fallo o repetición
             if (tablero[filas, columnas] == 'X')
             {
 
@@ -164,7 +164,7 @@ class BattleshipGame
             Console.WriteLine("\nJuego terminado. No has eliminado todos los barcos.");
             Console.WriteLine("..................................................");
             Console.WriteLine("\n * * * Barco/s faltante/s a elimnar * * *\n");
-            VerTablero(true);
+            VerTablero(true);//muestra el tablero de los barcos faltantes a eliminar
             Console.WriteLine("..................................................");
         }
     }
